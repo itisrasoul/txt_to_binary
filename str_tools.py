@@ -1,6 +1,9 @@
+def char_to_bin(char_in):
+    char_ascii = ord(char_in)
+    return bin(char_ascii).replace("0b", "")
+
 def str_to_bin(str_in):
-    str_ascii = ord(str_in)
-    return bin(str_ascii).replace("0b", "")
+    return "    ".join([char_to_bin(each) for each in str_in])
 
 def bin_to_str(bin_in):
     bin_ascii = int(str(bin_in).strip(), 2)

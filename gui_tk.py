@@ -1,6 +1,6 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
-from str_tools import str_to_bin, bin_to_str
+from str_tools import str_to_bin, bin_to_str, char_to_bin
 
 class Application(ttk.Window):
     def __init__(self, *args, **kwargs):
@@ -45,7 +45,7 @@ class Application(ttk.Window):
 
     def show_binary(self, *args):
         str_in = self.str_in_txtbox.get("1.0", END)
-        bin_array = [str_to_bin(char) for char in str_in]
+        bin_array = [char_to_bin(char) for char in str_in]
         self.bin_out_txtbox.delete("1.0", END)
         self.bin_out_txtbox.insert("1.0", "    ".join(bin_array))
         return 'break'
@@ -60,3 +60,5 @@ class Application(ttk.Window):
 # root = tk.Window()
 app = Application(themename="superhero")
 app.mainloop()
+
+str().__contains__(o)
